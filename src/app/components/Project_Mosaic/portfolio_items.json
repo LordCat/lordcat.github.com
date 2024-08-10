@@ -1,11 +1,10 @@
 {
     "portfolioItems": [
-        {"title": "Project 1", "text": "Description text"},
-        {"title": "Project 2", "text": "Description text"},
-        {"title": "Project 3", "text": "Description text"},
-        {"title": "Project 4", "text": "Description text"},
-        {"title": "Project 5", "text": "Description text"},
-        {"title": "Project 6", "text": "Description text"},
-        {"title": "Project 7", "text": "Description text"}
+      {
+        "title": "Project 1",
+        "text": "Description text for Project 1",
+        "tags": ["Web", "React", "TypeScript"],
+        "videoUrl": "/videos/project1.mp4"
+      }
     ]
-}
+  }

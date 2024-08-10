@@ -1,7 +1,7 @@
 import PortfolioGrid from "@/app/components/Project_Mosaic/Mosaic_Display";
 import portfolioData from "@/app/components/Project_Mosaic/portfolio_items.json";
 import BlogSlider from "./components/Project_Blogs/Blog_Display";
-import blogEntries from "@/app/components/Project_Blogs/blog_items.json"
+
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <p> Welcome to my website</p>
       
       <div className="container mx-auto p-4">
-      <h1 className="text-2xl  font-bold mb-4">My Portfolio</h1>
+      <h1 className="text-2xl font-bold mb-4">My Portfolio</h1>
       <PortfolioGrid items={portfolioData.portfolioItems} />
       <BlogSlider />
       </div>
