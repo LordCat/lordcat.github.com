@@ -1,3 +1,6 @@
+//This Component displayes the entries in portfolio_items.js in
+// It displays as 3 views that change entry on random every 10 seconds
+
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -60,7 +63,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
       {displayedItems.map((item, index) => (
         <div 
           key={index} 
-          className="relative h-0 pb-[56.25%] overflow-hidden rounded-lg group"
+          className="relative  pb-[70%] overflow-hidden rounded-lg group"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >

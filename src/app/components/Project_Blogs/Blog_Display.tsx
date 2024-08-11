@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import blogEntries from '@/app/components/Project_Blogs/blog_items.json'
 
 interface BlogEntry {
@@ -12,17 +12,34 @@ interface BlogEntry {
   summary: string;
   content: string;
   tags: string[];
-  imageUrl?: string;
+  imageUrl: string;
 }
 
 const BlogSlider: React.FC = () => {
-  const [entries, setEntries] = useState<BlogEntry[]>(blogEntries);
+  //Get the json items array
+  const [entries] = useState<BlogEntry[]>(blogEntries);
+
+  //manage selection state
   const [expandedEntry, setExpandedEntry] = useState<string | null>(null);
+  
+  //manage full view state
+  const [fullScreenEntry, setFullScreenEntry] = useState<BlogEntry | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
+
+
   const handleExpand = (id: string) => {
-    setExpandedEntry(expandedEntry === id ? null : id);
+    setExpandedEntry(id);
   };
+
+  const handleDoubleClick = (entry: BlogEntry) => {
+    setFullScreenEntry(entry);
+  };
+
+  const closeFullScreen = () => {
+    setFullScreenEntry(null);
+  };
+
 
   const scroll = (direction: 'left' | 'right') => {
     if (sliderRef.current) {
@@ -34,8 +51,9 @@ const BlogSlider: React.FC = () => {
     }
   };
 
+
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-full">
       <div 
         ref={sliderRef}
         className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
@@ -45,11 +63,12 @@ const BlogSlider: React.FC = () => {
           <div 
             key={entry.id} 
             className={`flex-shrink-0 w-64 m-2 rounded-lg cursor-pointer transition-all duration-300 ease-in-out snap-start overflow-hidden ${
-              expandedEntry === entry.id ? 'w-96 h-auto' : 'h-48'
+              expandedEntry === entry.id ? 'w-100 h-250' : 'h-48'
             }`}
             onClick={() => handleExpand(entry.id)}
+            onDoubleClick={() => handleDoubleClick(entry)}
             style={{
-              backgroundImage: entry.imageUrl ? `url(${entry.imageUrl})` : 'none',
+              backgroundImage: `url(${entry.imageUrl})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -87,7 +106,34 @@ const BlogSlider: React.FC = () => {
       >
         <ChevronRight size={24} className="text-black" />
       </button>
-    </div>
+    {fullScreenEntry && (
+      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg p-8 max-w-4xl max-h-[90vh] overflow-y-auto relative">
+          <button 
+            onClick={closeFullScreen}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          >
+            <X size={24} />
+          </button>
+          <h2 className="text-2xl font-bold mb-4">{fullScreenEntry.title}</h2>
+          <p className="text-sm text-gray-500 mb-4">{fullScreenEntry.date} - {fullScreenEntry.author}</p>
+          <img 
+            src={fullScreenEntry.imageUrl} 
+            alt={fullScreenEntry.title} 
+            className="w-full h-64 object-cover mb-4 rounded"
+          />
+          <p className="text-gray-700 mb-4">{fullScreenEntry.content}</p>
+          <div className="flex flex-wrap gap-2">
+            {fullScreenEntry.tags.map((tag, index) => (
+              <span key={index} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
   );
 };
 
