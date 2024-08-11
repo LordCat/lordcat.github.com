@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, RefObject } from 'react';
 import * as THREE from 'three';
 

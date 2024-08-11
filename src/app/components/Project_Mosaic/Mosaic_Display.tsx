@@ -22,7 +22,9 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
 
   // Create a memoized video cache
   const videoCache = useMemo(() => {
+    if (typeof window === 'undefined') return {};
     const cache: { [url: string]: HTMLVideoElement } = {};
+    
     items.forEach(item => {
       if (!cache[item.videoUrl]) {
         const video = document.createElement('video');

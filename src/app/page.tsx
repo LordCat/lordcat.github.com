@@ -34,9 +34,9 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <p className="text-lg mb-2">I'm a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that's just picking at random</p>
-          <p className="text-lg mb-2">You're welcome to look at my projects, or my write ups, these can vary and generally me pretending I'm a blogger.</p>
-          <p className="text-lg mb-2">If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you're welcome to email me.</p>
+          <p className="text-lg mb-2">I&apos;m a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that&apos;s just picking at random</p>
+          <p className="text-lg mb-2">You&apos;re welcome to look at my projects, or my write ups, these can vary and generally me pretending I&apos;m a blogger.</p>
+          <p className="text-lg mb-2">If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you&apos;re welcome to email me.</p>
         </div>
       </div>
 
