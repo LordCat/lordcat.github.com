@@ -34,7 +34,7 @@ const StarfieldAnimation: React.FC<Props> = ({ containerRef }) => {
         });
 
         const starVertices = [];
-        for (let i = 0; i < 15000; i++) {
+        for (let i = 0; i < 10000; i++) {
             const x = (Math.random() - 0.5) * 2000;
             const y = (Math.random() - 0.5) * 2000;
             const z = (Math.random() - 0.5) * 2000;
@@ -58,7 +58,7 @@ const StarfieldAnimation: React.FC<Props> = ({ containerRef }) => {
             camera.lookAt(scene.position);
 
             // Add slight drag effect to stars
-            stars.rotation.y += 0.0001;
+            stars.rotation.y += 0.001;
             
             renderer.render(scene, camera);
         };

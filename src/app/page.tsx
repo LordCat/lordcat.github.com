@@ -11,10 +11,10 @@ export default function Home() {
   const rightSideRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="flex min-h-screen">
+    <main className="flex flex-col md:flex-row min-h-screen">
       {/* Left side - Name and Welcome */}
-      <div className="w-1/4 pr-8 p-24">
-        <div className="sticky top-24">
+      <div className="w-full md:w-1/4 p-6 md:p-24">
+        <div className="md:sticky md:top-24">
           <h1 className="text-3xl font-bold mb-4">Kristian Kelly</h1>
           {/* Social Links */}
           <div className="flex space-x-4 mb-4">
@@ -41,12 +41,12 @@ export default function Home() {
       </div>
 
       {/* Right side - Portfolio and Blog with Starfield Background */}
-      <div className="w-3/4 relative" ref={rightSideRef}>
+      <div className="w-full md:w-3/4 relative" ref={rightSideRef}>
         {/* Starfield Animation - Positioned behind the content */}
         <StarfieldAnimation containerRef={rightSideRef} />
         
         {/* Content */}
-        <div className="relative z-10 p-24">
+        <div className="relative z-10 p-6 md:p-24">
           {/* Portfolio section */}
           <div className="">
             <h2 className="text-2xl font-bold">My Portfolio</h2>
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
           {/* Blog section */}
           <div>
-            <h2 className="text-5xl font-bold">My Blog</h2>
+            <h2 className="text-3x1 md:text-5xl font-bold">My Blog</h2>
             <BlogSlider />
           </div>
         </div>
