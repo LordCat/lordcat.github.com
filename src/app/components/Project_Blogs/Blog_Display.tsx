@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import blogEntries from '@/app/components/Project_Blogs/blog_items.json'
+import Image from 'next/image';
 
 interface BlogEntry {
   id: string;
@@ -117,7 +118,7 @@ const BlogSlider: React.FC = () => {
           </button>
           <h2 className="text-2xl font-bold mb-4">{fullScreenEntry.title}</h2>
           <p className="text-sm text-gray-500 mb-4">{fullScreenEntry.date} - {fullScreenEntry.author}</p>
-          <img 
+          <Image
             src={fullScreenEntry.imageUrl} 
             alt={fullScreenEntry.title} 
             className="w-full h-64 object-cover mb-4 rounded"
