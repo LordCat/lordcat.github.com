@@ -92,16 +92,13 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
           </div>
           <div className="absolute inset-0 overflow-hidden">
             <video
-              ref={el => {
-                if (el) {
-                  el.src = videoCache[item.videoUrl].src;
-                  el.load();
-                }
-              }}
+              key={item.videoUrl}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto min-h-full object-cover transition-all duration-300 ease-in-out group-hover:w-[120%] group-hover:h-[120%]"
               loop
               muted
               playsInline
+              autoPlay
+              src={item.videoUrl}
             />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
