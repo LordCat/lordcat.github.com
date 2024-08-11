@@ -3,7 +3,7 @@
 
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 interface GridItem {
   title: string;
@@ -18,8 +18,24 @@ interface PortfolioGridProps {
 
 const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
   const [displayedItems, setDisplayedItems] = useState<GridItem[]>([]);
-  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  // Create a memoized video cache
+  const videoCache = useMemo(() => {
+    const cache: { [url: string]: HTMLVideoElement } = {};
+    items.forEach(item => {
+      if (!cache[item.videoUrl]) {
+        const video = document.createElement('video');
+        video.src = item.videoUrl;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.preload = 'auto';
+        cache[item.videoUrl] = video;
+      }
+    });
+    return cache;
+  }, [items]);
 
   const getRandomItems = () => {
     const shuffled = [...items].sort(() => 0.5 - Math.random());
@@ -42,13 +58,13 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
   }, [items, hoveredIndex]);
 
   useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
+    displayedItems.forEach(item => {
+      const video = videoCache[item.videoUrl];
       if (video) {
-        video.load();
         video.play().catch(error => console.error("Error playing video:", error));
       }
     });
-  }, [displayedItems]);
+  }, [displayedItems, videoCache]);
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -74,15 +90,17 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
           </div>
           <div className="absolute inset-0 overflow-hidden">
             <video
-              ref={el => { videoRefs.current[index] = el; }}
+              ref={el => {
+                if (el) {
+                  el.src = videoCache[item.videoUrl].src;
+                  el.load();
+                }
+              }}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto min-h-full object-cover transition-all duration-300 ease-in-out group-hover:w-[120%] group-hover:h-[120%]"
               loop
               muted
               playsInline
-            >
-              <source src={item.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
             <p className="text-white text-sm mb-4">{item.text}</p>
