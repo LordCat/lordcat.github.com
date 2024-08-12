@@ -41,7 +41,7 @@ export default function Home() {
       </div>
 
       {/* Right side - Portfolio and Blog with Starfield Background */}
-      <div className="w-full md:w-3/4 relative" ref={rightSideRef}>
+      <div className="flex w-full md:w-3/4 relative" ref={rightSideRef}>
         {/* Starfield Animation - Positioned behind the content */}
         <StarfieldAnimation containerRef={rightSideRef} />
         
