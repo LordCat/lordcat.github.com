@@ -57,7 +57,7 @@ const BlogSlider: React.FC = () => {
     <div className="relative w-full h-full">
       <div 
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory w-full"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {entries.map((entry) => (
