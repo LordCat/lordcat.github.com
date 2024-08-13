@@ -1,23 +1,25 @@
 'use client'
 
+
+import { useRef } from "react";
+import Link from "next/link";
 import PortfolioGrid from "@/app/components/Project_Mosaic/Mosaic_Display";
 import portfolioData from "@/app/components/Project_Mosaic/portfolio_items.json";
 import BlogSlider from "./components/Project_Blogs/Blog_Display";
-import Link from "next/link";
 import StarfieldAnimation from "./components/bg_Animation";
-import { useRef } from "react";
 
 export default function Home() {
   const rightSideRef = useRef<HTMLDivElement>(null);
 
   return (
     <main className="flex flex-col md:flex-row min-h-screen">
-      {/* Left side - Name and Welcome */}
-      <div className="w-2/6">
-        <div className="md:sticky w-4/5 pl-5 md:top-8 lg:top-12">
-          <h1 className="sm:text-3xl font-bold mb-2 sm:mb-4">Kristian Kelly</h1>
+      {/* Left side - Name, Welcome, and Social Links */}
+      <div className="w-full md:w-1/4 p-4 md:p-6 bg-black-100 border-shadow">
+        <div className="md:sticky md:top-6">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Kristian Kelly</h1>
+          
           {/* Social Links */}
-          <div className="flex space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+          <div className="flex space-x-4 mb-4">
             <Link href="https://www.linkedin.com/in/kristian-alex-ball/" target="_blank" rel="noopener noreferrer">
               <svg className="w-6 h-6 text-blue-500 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -34,37 +36,41 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <p className="text-sm  lg:text-lg mb-2 sm:mb-3">
-            I&apos;m a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that&apos;s just picking at random.
-          </p>
-          <p className="text-sm  lg:text-lg mb-2 sm:mb-3">
-            You&apos;re welcome to look at my projects, or my write ups, these can vary and generally me pretending I&apos;m a blogger.
-          </p>
-          <p className="text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">
-            If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you&apos;re welcome to email me.
-          </p>
+          
+          <div className="space-y-3 text-sm md:text-base text-green-700">
+            <p>
+              I'm a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that's just picking at random.
+            </p>
+            <p>
+              You're welcome to look at my projects, or my write ups, these can vary and generally me pretending I'm a blogger.
+            </p>
+            <p>
+              If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you're welcome to email me.
+            </p>
           </div>
+        </div>
       </div>
 
       {/* Right side - Portfolio and Blog with Starfield Background */}
-      <div className="flex w-full md:w-3/4 relative" ref={rightSideRef}>
-        {/* Starfield Animation - Positioned behind the content */}
+      <div className="w-full md:w-3/4 relative" ref={rightSideRef}>
+        {/* Starfield Animation */}
         <StarfieldAnimation containerRef={rightSideRef} />
         
         {/* Content */}
-        <div className=" relative z-10 p-6 md:p-24">
+        <div className="relative z-10 p-4 md:p-6 space-y-8">
           {/* Blog section */}
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold w-full h-auto">Write-Ups</h2>
+          <div className="md:h-1/2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Write-Ups</h2>
             <BlogSlider />
           </div>
+          
           {/* Portfolio section */}
-          <div className="sd:w-2/5 w-full">
-            <h2 className="text-2xl font-bold">Github Pojects</h2>
+          <div className="md:h-1/2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Github Projects</h2>
             <PortfolioGrid items={portfolioData.portfolioItems} />
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 }
