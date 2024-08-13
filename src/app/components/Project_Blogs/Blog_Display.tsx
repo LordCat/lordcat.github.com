@@ -57,12 +57,12 @@ const BlogSlider: React.FC = () => {
     <div className="relative w-full h-full">
       <div 
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory w-full"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {entries.map((entry) => (
           <div 
-            key={entry.id}
+            key={entry.id} 
             className={`flex-shrink-0 w-64 m-2 rounded-lg cursor-pointer transition-all duration-300 ease-in-out snap-start overflow-hidden ${
               expandedEntry === entry.id ? 'w-100 h-250' : 'h-48'
             }`}
@@ -76,7 +76,7 @@ const BlogSlider: React.FC = () => {
           >
             <div className="h-full w-full p-4 bg-black bg-opacity-50 text-white">
               <h3 className="text-lg font-bold mb-2">{entry.title}</h3>
-              <p className="text-xs mb-2">{entry.date} - {entry.author}</p> 
+              <p className="text-xs mb-2">{entry.date} - {entry.author}</p>
               {expandedEntry === entry.id ? (
                 <div>
                   <div className="text-sm mb-2 overflow-y-auto max-h-60">{entry.content}</div>
@@ -89,7 +89,7 @@ const BlogSlider: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <p className="text-sm">{entry.summary}</p>
+                <p className="text-sm truncate">{entry.summary}</p>
               )}
             </div>
           </div>

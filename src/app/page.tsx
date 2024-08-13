@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <main className="flex flex-col md:flex-row min-h-screen">
       {/* Left side - Name and Welcome */}
-      <div className="w-full md:w-1/3 lg:w-1/4 p-4 sm:p-6 md:p-8 lg:p-12">
-        <div className="md:sticky md:top-8 lg:top-12">
+      <div className="w-2/6">
+        <div className="md:sticky w-4/5 pl-5 md:top-8 lg:top-12">
           <h1 className="sm:text-3xl font-bold mb-2 sm:mb-4">Kristian Kelly</h1>
           {/* Social Links */}
           <div className="flex space-x-3 sm:space-x-4 mb-3 sm:mb-4">
@@ -34,10 +34,10 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <p className="text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">
+          <p className="text-sm  lg:text-lg mb-2 sm:mb-3">
             I&apos;m a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that&apos;s just picking at random.
           </p>
-          <p className="text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">
+          <p className="text-sm  lg:text-lg mb-2 sm:mb-3">
             You&apos;re welcome to look at my projects, or my write ups, these can vary and generally me pretending I&apos;m a blogger.
           </p>
           <p className="text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">
@@ -52,14 +52,14 @@ export default function Home() {
         <StarfieldAnimation containerRef={rightSideRef} />
         
         {/* Content */}
-        <div className="relative z-10 p-6 md:p-24">
+        <div className=" relative z-10 p-6 md:p-24">
           {/* Blog section */}
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold w-auto h-auto">Write-Ups</h2>
+            <h2 className="text-3xl md:text-5xl font-bold w-full h-auto">Write-Ups</h2>
             <BlogSlider />
           </div>
           {/* Portfolio section */}
-          <div className="sd:w-2/5">
+          <div className="sd:w-2/5 w-full">
             <h2 className="text-2xl font-bold">Github Pojects</h2>
             <PortfolioGrid items={portfolioData.portfolioItems} />
           </div>
