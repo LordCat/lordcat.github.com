@@ -77,11 +77,11 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4 w-full">
+    <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full h-auto sm:h-40%">
       {displayedItems.map((item, index) => (
         <div 
           key={index} 
-          className="relative  pb-[70%] overflow-hidden rounded-lg group"
+          className="relative pb-[100%] rounded-l"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
