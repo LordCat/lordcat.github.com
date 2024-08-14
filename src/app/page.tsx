@@ -48,7 +48,7 @@ export default function Home() {
               If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you&apos;re welcome to email me.
             </p>
             <p>
-              **I'm currently hosting on github pages and I also like to use 3D rendering and that may cause performance issues on your device. Also they may take a while to load.**
+              **I&apos;m currently hosting on github pages and I also like to use 3D rendering and that may cause performance issues on your device. Also they may take a while to load.**
             </p>
           </div>
         </div>
