@@ -125,7 +125,7 @@ const BlogSlider: React.FC = () => {
                       }}
                       className="flex items-center justify-center text-sm bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition-colors duration-200"
                     >
-                      Read Full Article
+                      Read Full Write-Up
                     </button>
                   </div>
                 ) : (
@@ -153,7 +153,7 @@ const BlogSlider: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
           <div 
             ref={fullScreenRef}
-            className="bg-white rounded-lg p-8 max-w-4xl max-h-[90vh] overflow-y-auto relative w-full"
+            className="bg-black rounded-lg p-8 max-w-4xl max-h-[90vh] overflow-y-auto relative w-full"
           >
             <button 
               onClick={closeFullScreen}
@@ -170,7 +170,7 @@ const BlogSlider: React.FC = () => {
               height={300}
               className="w-full h-64 object-cover mb-4 rounded"
             />
-            <div className="text-black prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
+            <div className="text-white prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
               {formatContent(fullScreenEntry.content)}
             </div>
             <div className="flex flex-wrap gap-2 my-4">
