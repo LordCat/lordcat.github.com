@@ -1,5 +1,5 @@
 // app/blog/[id]/page.tsx
-'use client'
+
 
 import React from 'react';
 import { useParams } from 'next/navigation';
