@@ -1,17 +1,10 @@
-// app/blog/[id]/page.tsx
-
+'use client'
 
 import React from 'react';
 import { useParams } from 'next/navigation';
 import blogEntries from '@/app/components/Project_Blogs/blog_items.json';
 import Image from 'next/image';
 import Link from 'next/link';
-
-export async function generateStaticParams() {
-    return blogEntries.map((entry) => ({
-      id: entry.id,
-    }));
-  }
 
 const BlogPost: React.FC = () => {
   const { id } = useParams();
