@@ -31,20 +31,5 @@ Run the development server:
 npm run dev
 
 Open http://localhost:3000 in your browser.
-'
-Project Structure
-Copyportfolio-website/
-├── app/
-│   ├── components/
-│   │   ├── Project_Mosaic/
-│   │   ├── Project_Blogs/
-│   │   └── bg_Animation/
-│   ├── blog/
-│   │   └── [id]/
-│   └── page.tsx
-├── public/
-│   ├── images/
-│   └── videos/
-└── README.md
-'
+
 Special Thanks to @atlaswiki for helping with UX.
