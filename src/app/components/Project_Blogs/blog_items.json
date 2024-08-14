@@ -1,52 +1,12 @@
 [
-    {
-      "id": "001",
-      "title": "The Future of AI",
-      "date": "2024-08-15",
-      "author": "Jane Doe",
-      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
-      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
-      "tags": ["AI", "Technology", "Future"],
-      "imageUrl": "/images/blog1.jpg"
-    },
-    {
-      "id": "002",
-      "title": "The Future of AI",
-      "date": "2024-08-15",
-      "author": "Jane Doe",
-      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
-      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
-      "tags": ["AI", "Technology", "Future"],
-      "imageUrl": "/images/blog1.jpg"
-    },
-    {
-      "id": "003",
-      "title": "The Future of AI",
-      "date": "2024-08-15",
-      "author": "Jane Doe",
-      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
-      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
-      "tags": ["AI", "Technology", "Future"],
-      "imageUrl": "/images/blog1.jpg"
-    },
-    {
-      "id": "004",
-      "title": "The Future of AI",
-      "date": "2024-08-15",
-      "author": "Jane Doe",
-      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
-      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
-      "tags": ["AI", "Technology", "Future"],
-      "imageUrl": "/images/blog1.jpg"
-    },
-    {
-      "id": "005",
-      "title": "The Future of AI",
-      "date": "2024-08-15",
-      "author": "Jane Doe",
-      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
-      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
-      "tags": ["AI", "Technology", "Future"],
-      "imageUrl": "/images/blog1.jpg"
-    }
+  {
+    "id": "001",
+    "title": "An Introduction of Sorts",
+    "date": "2024-08-14",
+    "author": "Kristian Kelly",
+    "summary": "Well you know my name, To keep it brief. I always been hobbyist in tech and software since I was 15~16 when I had gotten my first laptop, I had friends with computers and that was rare at the time. I just started tinkering, there's been almost two decades since then, Coding in C++ was my favorite and I've had a long interest in cyber security before it was even called cyber security, but I'm sure I'll write about this stuff at some point maybe. For now let me tell you a bit about my current lab set up. Just bare with me, maybe it will inspire something in you.",
+    "content": "# An Introduction of Sorts\n\nWell you know my name, To keep it brief. I always been hobbyist in tech and software since I was 15~16 when I had gotten my first laptop, I had friends with computers and that was rare at the time. I just started tinkering, there's been almost two decades since then, Coding in C++ was my favorite and I've had a long interest in cyber security before it was even called cyber security, but I'm sure I'll write about this stuff at some point maybe. For now let me tell you a bit about my current lab set up. Just bare with me, maybe it will inspire something in you.\n\n## The Hardware\n\nMy Lab set up and their eh..Nicknames? Call signs? Take your pick \n\n- Asus K31AD desktop: i3 3.2ghz, 12gb RAM, 2 x 1TB SSD - Work Horse\n\n- HP Stream M1 laptop: Celeron, 1.6.ghz,  2gb RAM, 32GB HDD. - Messenger\n\n- HP TPN-C12 laptop: i3 2.0ghz, 8 gb RAM, 1 x 1 TB HDD. - Watch Tower\n\n- Apple Mac Book Pro 2012: i5 2.5ghz,  16gb,RAM, 1 x 1 TB SSD. - Ambassador \n\n- Netis NR801: mixture of physical and wireless connections - Diplomat\n\nIt's an eclectic collection of devices. But why waste perfectly good computing power.\n\n## The Software\n\nMain OS's Running are \nArch,\nUbuntu,\nWindows 10,\nMacOS Catalina, \n\nI have some dozen or so spare HDDs with different OS for when I'm experimenting or working on a specific lab set up, \"Variety is the spice of life\" as they say, Tails, Kali, Windows *, some have various Vulnerable linux distros from like before the time of Hack The Box and TryHackme. Learning all this stuff was a different beast entirely. I guess HackThisSite was around since 2010~ish, but that always had the \"git gud noob\" vibe instead of the new more approachable \"academic\" model. But I digress. \n\nWorkHorse is my main development and testing environment. It's got various compilers/interpreters etc, C/ C++, JS/TS, Python, Go, Ruby, maybe some esoteric ones too but Docker is abused heavily. Internal CD/CI, Web servers, Database, Ready to be deployed and killed by the millions with a few simple commands. Orchestration with Docker Compose. Damn good stuff I say. \n\nWatch Tower operates as my Security Information Monitoring and Intrusion detection:\n- Suricata, an open source intrusion detection and prevention system\n- Wazuh, an open source security monitoring platform\n\nMessenger run docker mostly and has various functions, deploying scripts, small databases in case I need it. Generating traffic, hosting web servers. I guess you could call it a C2 server, but just barely Honestly. \n\nDiplomat is a router. It facilitates communication, both good and bad. Not much else to say.\n\nAmbassador is my portable toolkit. The long battery Life, and specs make it perfect as a portable swiss-army knife, durable because of the aluminum case, and with all those gadgets available now to argument it's abilities. It's pretty damn useful. \n\nThat's about it for the general lab set up. I think this is enough for today. I hope to expand more on what sort of stuff I work on. \n\nSo yeah\nThanks for reading",
+    "tags": ["Technology", "Lab Setup", "Hardware", "Software", "Cybersecurity"],
+    "imageUrl": "/images/blog1.jpg"
+  }
   ]

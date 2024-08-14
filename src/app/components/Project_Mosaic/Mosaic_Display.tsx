@@ -7,6 +7,7 @@ interface GridItem {
   text: string;
   tags: string[];
   videoUrl: string;
+  projectUrl: string;
 }
 
 interface PortfolioGridProps {
@@ -72,14 +73,19 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
     setHoveredIndex(null);
   };
 
+  const handleClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
       {displayedItems.map((item, index) => (
         <div 
           key={index} 
-          className="relative aspect-square rounded-lg overflow-hidden shadow-lg"
+          className="relative cursor-pointer aspect-square rounded-lg overflow-hidden shadow-lg"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
+          onClick={() => handleClick(item.projectUrl)}
         >
           <div className="absolute inset-0 flex items-center justify-center bg-gray-800 group-hover:bg-transparent transition-colors duration-300">
             <h3 className="text-white text-lg font-bold text-center px-4 py-2 bg-black bg-opacity-50 rounded group-hover:opacity-0 transition-opacity duration-300">

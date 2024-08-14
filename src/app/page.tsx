@@ -39,13 +39,16 @@ export default function Home() {
           
           <div className="space-y-3 text-sm md:text-base text-green-700">
             <p>
-              I`&apos;m a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that&apos;s just picking at random.
+              I&apos;m a Developer and Security researcher. I have a litany of interests from Full stack development, Data Analytics, Geospatial Intelligence Systems, Security testing and that&apos;s just picking at random.
             </p>
             <p>
-              You`&apos;re welcome to look at my projects, or my write ups, these can vary and generally me pretending I`&apos;m a blogger.
+              You&apos;re welcome to look at my projects, or my write ups, these can vary and generally me pretending I&apos;m a blogger.
             </p>
             <p>
-              If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you`&apos;re welcome to email me.
+              If you wish to leave a complaint, or want to reach out to me about my projects or collaborate on future projects, you&apos;re welcome to email me.
+            </p>
+            <p>
+              **I'm currently hosting on github pages and I also like to use 3D rendering and that may cause performance issues on your device. Also they may take a while to load.**
             </p>
           </div>
         </div>
