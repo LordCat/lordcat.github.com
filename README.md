@@ -31,7 +31,7 @@ Run the development server:
 npm run dev
 
 Open http://localhost:3000 in your browser.
-
+`
 Project Structure
 Copyportfolio-website/
 ├── app/
@@ -46,5 +46,5 @@ Copyportfolio-website/
 │   ├── images/
 │   └── videos/
 └── README.md
-
+`
 Special Thanks to @atlaswiki for helping with UX.
