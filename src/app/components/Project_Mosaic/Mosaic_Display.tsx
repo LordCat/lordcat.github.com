@@ -1,6 +1,3 @@
-//This Component displayes the entries in portfolio_items.js in
-// It displays as 3 views that change entry on random every 10 seconds
-
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react';
@@ -20,7 +17,6 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
   const [displayedItems, setDisplayedItems] = useState<GridItem[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Create a memoized video cache
   const videoCache = useMemo(() => {
     if (typeof window === 'undefined') return {};
     const cache: { [url: string]: HTMLVideoElement } = {};
@@ -55,7 +51,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
     };
 
     updateItems();
-    const intervalId = setInterval(updateItems, 100000);
+    const intervalId = setInterval(updateItems, 10000);
     return () => clearInterval(intervalId);
   }, [items, hoveredIndex]);
 
@@ -77,11 +73,11 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
   };
 
   return (
-    <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full h-auto sm:h-40%">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
       {displayedItems.map((item, index) => (
         <div 
           key={index} 
-          className="relative pb-[100%] rounded-l"
+          className="relative aspect-square rounded-lg overflow-hidden shadow-lg"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
@@ -93,7 +89,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
           <div className="absolute inset-0 overflow-hidden">
             <video
               key={item.videoUrl}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-auto min-h-full object-cover transition-all duration-300 ease-in-out group-hover:w-[120%] group-hover:h-[120%]"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-110"
               loop
               muted
               playsInline
@@ -102,7 +98,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
             />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
-            <p className="text-white text-sm mb-4">{item.text}</p>
+            <p className="text-white text-sm mb-4 line-clamp-3">{item.text}</p>
             <div className="flex flex-wrap justify-center gap-2">
               {item.tags.map((tag, tagIndex) => (
                 <span key={tagIndex} className="text-xs bg-blue-500 bg-opacity-75 text-white px-2 py-1 rounded">

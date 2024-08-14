@@ -28,5 +28,25 @@
       "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
       "tags": ["AI", "Technology", "Future"],
       "imageUrl": "/images/blog1.jpg"
+    },
+    {
+      "id": "004",
+      "title": "The Future of AI",
+      "date": "2024-08-15",
+      "author": "Jane Doe",
+      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
+      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
+      "tags": ["AI", "Technology", "Future"],
+      "imageUrl": "/images/blog1.jpg"
+    },
+    {
+      "id": "005",
+      "title": "The Future of AI",
+      "date": "2024-08-15",
+      "author": "Jane Doe",
+      "summary": "Exploring the potential impacts of artificial intelligence on society and industry.",
+      "content": "Artificial Intelligence (AI) is rapidly evolving, promising to revolutionize various aspects of our lives. From healthcare to transportation, AI is making significant strides. This blog post delves into the potential future applications of AI and their implications for society, discussing both the opportunities and challenges that lie ahead.",
+      "tags": ["AI", "Technology", "Future"],
+      "imageUrl": "/images/blog1.jpg"
     }
   ]
