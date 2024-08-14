@@ -8,6 +8,8 @@ interface Props {
 }
 
 const StarfieldAnimation: React.FC<Props> = ({ containerRef }) => {
+    
+    
     useEffect(() => {
         if (!containerRef.current) return;
 

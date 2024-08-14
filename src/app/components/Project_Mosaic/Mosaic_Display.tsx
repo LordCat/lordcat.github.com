@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 interface GridItem {
   title: string;
@@ -36,10 +36,10 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
     return cache;
   }, [items]);
 
-  const getRandomItems = () => {
+  const getRandomItems = useCallback(() => {
     const shuffled = [...items].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 3);
-  };
+  }, [items]);
 
   useEffect(() => {
     const updateItems = () => {
@@ -54,7 +54,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({ items }) => {
     updateItems();
     const intervalId = setInterval(updateItems, 10000);
     return () => clearInterval(intervalId);
-  }, [items, hoveredIndex]);
+  }, [items, hoveredIndex, getRandomItems]);
 
   useEffect(() => {
     displayedItems.forEach(item => {
