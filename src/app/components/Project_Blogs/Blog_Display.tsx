@@ -110,7 +110,7 @@ const BlogSlider: React.FC = () => {
                 <p className="text-xs mb-2">{entry.date} - {entry.author}</p>
                 {expandedEntry === entry.id ? (
                   <div className="animate-fade-in">
-                    <div className="text-sm mb-4 leading-relaxed line-clamp-5">{formatContent(entry.summary)}</div>
+                    <div className="text-sm mb-4 leading-relaxed line-clamp-4">{formatContent(entry.summary)}</div>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {entry.tags.map((tag, index) => (
                         <span key={index} className="text-xs bg-blue-500 bg-opacity-50 text-white px-2 py-1 rounded">
