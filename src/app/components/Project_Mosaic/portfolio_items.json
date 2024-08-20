@@ -6,7 +6,7 @@
         "tags": ["GIS", "React", "TypeScript", "TailWindcss", "Three.js"],
         "videoUrl": "/videos/project1.mp4",
         "projectUrl": "https://lordcat.github.io/Gesalt_Dashboard/"
-      }
+      },
       {
         "title": "Placeholder Extension",
         "text": "A Cross-platform Extension Template utilizing React + tailwindcss",
