@@ -7,5 +7,12 @@
         "videoUrl": "/videos/project1.mp4",
         "projectUrl": "https://lordcat.github.io/Gesalt_Dashboard/"
       }
+      {
+        "title": "Placeholder Extension",
+        "text": "A Cross-platform Extension Template utilizing React + tailwindcss",
+        "tags": ["Extensions", "React", "TypeScript", "TailWindcss", "Template"],
+        "videoUrl": "/images/blog1.jpg",
+        "projectUrl": "https://github.com/LordCat/PlaceHolder-Extension"
+      }
     ]
   }
